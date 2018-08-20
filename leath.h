@@ -10,11 +10,13 @@ private:
     Hashing h;
     Vertice seed;
     std::queue<Vertice> occupiedQueue;
+    double p;
 
 
 public:
-    Leath(long int m, unsigned long long int * seed);
+    Leath(unsigned long int m, unsigned long long int * seed, double p);
     unsigned long long int setMask(int i);
+    void visit(Vertice v, bool plusorminus);
     bool run();
 };
 
