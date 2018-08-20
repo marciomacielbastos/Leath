@@ -1,0 +1,11 @@
+#ifndef LATICE_H
+#define LATICE_H
+
+
+class Latice{
+private:
+public:
+    Latice();
+};
+
+#endif // LATICE_H

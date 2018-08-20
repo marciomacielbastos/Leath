@@ -1,0 +1,16 @@
+#include "latice.h"
+
+Latice::Latice()
+{
+
+}
+
+unsigned long long int * Latice::get_L(){
+    return Latice::L;
+}
+int Latice::get_d(){
+    return Latice::d;
+}
+
+unsigned long long int * Latice::L = nullptr;
+int Latice::d = 0;
