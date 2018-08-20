@@ -8,23 +8,25 @@ Leath::Leath(unsigned long int m, unsigned long long int * seed, double p): h(Ha
     this->p = p;
 }
 
-unsigned long long int Leath::setMask(int m){
+unsigned long long int Leath::setMask(unsigned int mask_shift){
     unsigned long long int mask = 1;
     mask = mask << (Lattice::getD() -1);
-    mask = mask >> m;
+    mask = mask >> mask_shift;
     return mask;
 }
 
 void Leath::visit(Vertice v, bool plusorminus){
+    unsigned long long int R_bar;
     unsigned long long * x = v.getX();
-    for(int i = 0; i < Lattice::getD(); i++){
+    for(unsigned int i = 0; i < Lattice::getD(); i++){
         if(x[i]+1 >= Lattice::getL()[i] && x[i]+1 <= 0) continue;
         if(plusorminus) x[i] += 1;
         else x[i] -= 1;
         Vertice node = Vertice(x, v.getCS()+1);
         node.setBitmap(setMask(i));
         if(h.insert(&node)){
-            if(PseudoDES::psdes(v.getN()) < Hashing::pow2(63)*(2*this->p)){
+            R_bar = ((PseudoDES::psdes(v.getN()) * Lattice::getD()) + i) * MAX + Leath::m;
+            if(R_bar < Hashing::pow2(63)*(2*this->p)){
                 this->occupiedQueue.push(v);
             }
         }
@@ -42,3 +44,12 @@ bool Leath::run(){
     }
     return true;
 }
+
+unsigned long long Leath::getM(){
+    return Leath::m;
+}
+
+void Leath::addM(){
+    Leath::m++;
+}
+unsigned long long int Leath::m = 0;

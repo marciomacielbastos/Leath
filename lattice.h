@@ -5,13 +5,13 @@
 class Lattice{
 private:
     static unsigned long long int *L;
-    static int d;
+    static unsigned int d;
 public:
     Lattice();
     static unsigned long long int * getL();
-    static int getD();
+    static unsigned int getD();
     static void setL(unsigned long long int *L);
-    static void setD(int d);
+    static void setD(unsigned int d);
 };
 
 #endif // LATICE_H

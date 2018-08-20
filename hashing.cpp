@@ -5,6 +5,8 @@
 #define GOLDEN_RATIO (sqrt(5)-1)/2
 #define w 32
 
+//CLUSTER NUMBERS & PRÓXIMO STAUFFER
+
 unsigned long int Hashing::pow2(unsigned long int m){
     unsigned long int p = 1;
     for(unsigned long int i=0; i < m; i++){
