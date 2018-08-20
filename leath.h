@@ -14,7 +14,7 @@ private:
 
 public:
     Leath(long int m, unsigned long long int * seed);
-    void setMask(unsigned long long int i);
+    unsigned long long int setMask(int i);
     bool run();
 };
 

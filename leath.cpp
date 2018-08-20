@@ -6,7 +6,7 @@ Leath::Leath(long int m, unsigned long long int * seed): h(Hashing(m)), seed(Ver
     occupiedQueue.push(this->seed);
 }
 
-void Leath::setMask(int m){
+unsigned long long int Leath::setMask(int m){
     unsigned long long int mask = 1;
     mask = mask << (Lattice::getD() -1);
     mask = mask >> m;

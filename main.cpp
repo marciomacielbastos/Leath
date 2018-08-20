@@ -9,30 +9,6 @@
 #include <bitset>
 #include <queue>
 
-#define GOLDEN_RATIO (sqrt(5)-1)/2
-
-class name
-{
-public:
-    static int *L;
-    int n;
-//    name(int *L): L(L){}
-    name(int n){
-        this->n = n;
-    }
-
-};
-
-int * name::L = nullptr;
-
-unsigned long int pow2(unsigned long int m){
-    unsigned long int p = 1;
-    for(unsigned long int i=0; i < m; i++){
-        p *= 2;
-    }
-    return p;
-}
-
 int main(){
 //    long int p = 3;
 //    std::cout<<GOLDEN_RATIO<<std::endl;
