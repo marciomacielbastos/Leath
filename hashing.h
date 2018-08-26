@@ -11,8 +11,8 @@ class Hashing
 
 public:
     Hashing();
-    unsigned long int pow2(unsigned long int m);
-    Hashing(long int m);
+    static unsigned long int pow2(unsigned long int m);
+    Hashing(unsigned long int m);
     unsigned long h(unsigned long long int n);
     bool insert(Vertice *v);
     bool search(Vertice *v);

@@ -29,8 +29,14 @@ void UF::f_union(int p, int q){
     int pRoot = find(p);
     int qRoot = find(q);
     if(pRoot == qRoot) return;
-    else if(this->sz[pRoot] > this->sz[qRoot]) id[qRoot] = pRoot;
-    else id[pRoot] = qRoot;
+    else if(this->sz[pRoot] > this->sz[qRoot]){
+        id[qRoot] = pRoot;
+        sz[pRoot] += sz[qRoot];
+    }
+    else{
+        id[pRoot] = qRoot;
+        sz[qRoot] += sz[pRoot];
+    }
     this->count--; //every time you do a union, you reduce one unit of the number of connected componets;
 }
 

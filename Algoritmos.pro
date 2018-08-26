@@ -20,7 +20,8 @@ SOURCES += main.cpp \
     vertice.cpp \
     bst.cpp \
     leath.cpp \
-    lattice.cpp
+    lattice.cpp \
+    pseudodes.cpp
 
 HEADERS += \
     uf.h \
@@ -28,4 +29,5 @@ HEADERS += \
     vertice.h \
     bst.h \
     leath.h \
-    lattice.h
+    lattice.h \
+    pseudodes.h
