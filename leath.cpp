@@ -20,7 +20,7 @@ bool Leath::run(){
         this->occupiedQueue.pop();
         unsigned long long * x = v.getX();
         for(int i = 0; i < Lattice::getD(); i++){
-            if(x[i]+1 >= Lattice::getL()[i]) continue;
+            if(x[i]+1 >= Lattice::getL()[i]) break;
             x[i] += 1;
             Vertice node = Vertice(x, v.getCS()+1);
             node.setBitmap(setMask(i));
@@ -34,7 +34,7 @@ bool Leath::run(){
             x[i] -= 1;
         }
         for(int i = 0; i < Lattice::getD(); i++){
-            if(x[i]+1 <= 0) continue;
+            if(x[i]+1 <= 0) break;
             x[i] -= 1;
             Vertice node = Vertice(x, v.getCS()+1);
             node.setBitmap(setMask(i));
