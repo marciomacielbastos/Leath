@@ -17,7 +17,7 @@ public:
     void exch(long i, long j);
     void swim(long k);
     void sink(long k);
-    void insert(int v);
+    void insert(long v);
     long get_min();
 };
 
