@@ -35,44 +35,8 @@ void Leath::visit(Vertice v, bool plusorminus){
     }
 }
 
-bool Leath::run(){
-    while (!this->occupiedQueue.empty()){
-        Vertice v = this->occupiedQueue.front();
-        this->occupiedQueue.pop();
-        unsigned long long * x = v.getX();
-        for(int i = 0; i < Lattice::getD(); i++){
-            if(x[i]+1 >= Lattice::getL()[i]) break;
-            x[i] += 1;
-            Vertice node = Vertice(x, v.getCS()+1);
-            node.setBitmap(setMask(i));
-            if(h.insert(&node)){
-                //Random test (change on monday)!
-                if(k < 15){
-                    this->occupiedQueue.push(v);
-                    k++;
-                }
-            }
-            x[i] -= 1;
-        }
-        for(int i = 0; i < Lattice::getD(); i++){
-            if(x[i]+1 <= 0) break;
-            x[i] -= 1;
-            Vertice node = Vertice(x, v.getCS()+1);
-            node.setBitmap(setMask(i));
-            if(h.insert(&node)){
-                //Random test (change on monday)!
-                if(k < 15){
-                    this->occupiedQueue.push(v);
-                    k++;
-                }
-            }
-            x[i] += 1;
-        }
-        visit(v, 1);
-        visit(v, 0);
-    }
-    return true;
-}
+
+
 
 unsigned long long Leath::getM(){
     return Leath::m;
