@@ -11,5 +11,6 @@ std::vector<long> tests(std::vector<long>& d){
 }
 
 int main(){
+    int i = 0;
     return 0;
 }
