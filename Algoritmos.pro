@@ -22,7 +22,8 @@ SOURCES += main.cpp \
     leath.cpp \
     lattice.cpp \
     pseudodes.cpp \
-    heap.cpp
+    heap.cpp \
+    dijkstra.cpp
 
 HEADERS += \
     uf.h \
@@ -32,4 +33,5 @@ HEADERS += \
     leath.h \
     lattice.h \
     pseudodes.h \
-    heap.h
+    heap.h \
+    dijkstra.h
